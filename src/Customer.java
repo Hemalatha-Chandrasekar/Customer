@@ -1,35 +1,36 @@
 import java.util.Scanner;
+class Customer {
+    String[] customerNames = new String[5];
+    public void inputCustomerData() {
+        Scanner input = new Scanner(System.in);
 
-public class Customer{
+        String fullName;
+        String firstName = "";
+        String lastName = "";
+        for (int i = 0; i < customerNames.length; i++) {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        // Prompt the user to enter a string
-        System.out.println("Enter your string:");
-        String A = sc.nextLine();
-
-        // Check if the string is a palindrome
-        if (isPalindrome(A)) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-    }
-
-    // Static method to check if a string is a palindrome
-    public static boolean isPalindrome(String str) {
-        int left = 0;
-        int right = str.length() - 1; // Corrected the right index
-
-        while (left < right) {
-            // Compare characters at left and right indices
-            if (str.charAt(left) != str.charAt(right)) {
-                return false;
+            System.out.println("Enter the first name: " + (i + 1) + "");
+            firstName = input.nextLine();
+            while (firstName.trim().isEmpty()){
+                System.out.println("First name cannot be empty" + "\n");
+                System.out.println("Enter the last name: " + (i + 1) + "");
+                firstName = input.nextLine();
             }
-            left++;  // Move left pointer forward
-            right--; // Move right pointer backward
+            System.out.println("Enter the last name: " + (i + 1) + "");
+            lastName = input.nextLine();
+            while (lastName.trim().isEmpty()) {
+                System.out.println("Last name cannot be empty" + "\n");
+                System.out.println("Enter the last name: " + (i + 1) + "");
+                lastName = input.nextLine();
+            }
+            customerNames[i] = firstName + " " + lastName;
         }
-        return true; // If all characters match, it's a palindrome
     }
+
+    public void displayCustomerData () {
+        for (String name : customerNames) {
+            System.out.println(name);
+        }
+    }
+
 }
