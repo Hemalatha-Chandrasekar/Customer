@@ -13,7 +13,7 @@ class Customer {
             firstName = input.nextLine();
             while (firstName.trim().isEmpty()){
                 System.out.println("First name cannot be empty" + "\n");
-                System.out.println("Enter the last name: " + (i + 1) + "");
+                System.out.println("Enter the Frist name: " + (i + 1) + "");
                 firstName = input.nextLine();
             }
             System.out.println("Enter the last name: " + (i + 1) + "");
